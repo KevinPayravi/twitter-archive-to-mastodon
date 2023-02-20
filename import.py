@@ -54,7 +54,7 @@ def replace_urls(tweet):
         text = tweet["text"]
     if "entities" in tweet and "urls" in tweet["entities"]:
         for url in tweet["entities"]["urls"]:
-            text.replace(url["url"], url["expanded_url"])
+            text = text.replace(url["url"], url["expanded_url"])
     return text
 
 
