@@ -165,7 +165,8 @@ Near the top of `import.py` are some variables you need to update:
 * `MASTODON_ACCESS_TOKEN` is your private API access token you need to post toots. You can get a token by going to Preferences -> Development -> New Application. Specify your application name (which will show up below your imported toots) and, optionally, a link (I put my Twitter profile link).
 * `DATA_DIR` is the location of your unzipped Twitter archive. Needs a trailing slash.
 * `MEDIA_DIR` is the location of your Twitter archive's media folder (`/tweets_media`). Needs a trailing slash.
-
+* `TWITTER_USERNAME` is your Twitter username (no @). This is used to track your threads.
+* 
 #### Dependencies
 Have Python3 and Pip installed.
 
