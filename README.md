@@ -28,6 +28,8 @@ Note that I don't plan to actively maintain or expand this script, but feel free
 
 The first few mods are to add a "created_at" parameter to the status-posting API. The second set of mods is to remove rate-limiting.
 
+⚠️ MOD AT YOUR OWN RISK! Nothing is guarenteed and what works with one version might break everything in the next version. Take a backup prior to modding. ⚠️
+
 ⚠️ You can and should revert these changes after you're done importing! Leaving disabled and/or ridiculously high rate limits makes your instance suspectible to attack. ⚠️
 
 After modding, you need to restart the daemon and Mastodon with the following commands:
