@@ -8,18 +8,18 @@ This is a server-side Python3 script you can use to import your [Twitter archive
 
 When migrating archived Tweets to Mastodon, this script will do the following:
 * Upload media
+* t.co short URLs are replaced with their targets
 * Replace @username with @username@twitter.com
 * Threads are recreated as threads (Luca noted that this is fragile, though it seemed to work reliably for me)
 * Retweets are skipped (I figure you wouldn't want these on your profile anyway)
 * Replies and tweets that start with "@" are skipped
 
 Limitations:
-* ⚠️ Private Twitter Circle tweets will become public toots
+* ⚠️ Private Twitter Circle tweets will become public toots!
 * I have no idea what happens if the script comes across a poll
 * Alt text is not included since the archive doesn't include them
   * Luca was working on fetching alt text from Twitter in his notebook
 * Edit history isn't imported
-* t.co URLs aren't being replaced properly
 
 Using this script, I was successfully able to import 2,300+ tweets from all the way back in 2010.
 
