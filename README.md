@@ -15,7 +15,8 @@ When migrating archived Tweets to Mastodon, this script will do the following:
 * Replies and tweets that start with "@" are skipped
 
 Limitations:
-* I have no idea what happens if the script comes across a poll.
+* ⚠️ Private Twitter Circle tweets will become public toots
+* I have no idea what happens if the script comes across a poll
 * Alt text is not included since the archive doesn't include them
   * Luca was working on fetching alt text from Twitter in his notebook
 * Edit history isn't imported
