@@ -28,6 +28,12 @@ The first few mods are to add a "created_at" parameter to the status-posting API
 
 ⚠️ You can and should revert these changes after you're done importing! Leaving disabled and/or ridiculously high rate limits makes your instance suspectible to attack. ⚠️
 
+After modding, you need to restart the daemon and Mastodon with the following commands:
+```
+systemctl daemon-reload
+sudo systemctl restart mastodon-*
+```
+
 ----
 
 ### In `app/controllers/api/v1/statuses_controller.rb`:
@@ -132,6 +138,16 @@ There are some API-related throttles towards the bottom. Example:
 ```
 
 I changed `throttle_authenticated_api`, `throttle_per_token_api`, `throttle_api_media`, `throttle_media_proxy` to absurd numbers (`300000` or whatever).
+
+----
+
+⚠️ You can and should revert these changes after you're done importing! Leaving disabled and/or ridiculously high rate limits makes your instance suspectible to attack. ⚠️
+
+After modding, you need to restart the daemon and Mastodon with the following commands:
+```
+systemctl daemon-reload
+sudo systemctl restart mastodon-*
+```
 
 ----
 
