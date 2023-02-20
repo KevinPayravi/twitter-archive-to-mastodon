@@ -170,7 +170,7 @@ Near the top of `import.py` are some variables you need to update:
 * `DATA_DIR` is the location of your unzipped Twitter archive. Needs a trailing slash.
 * `MEDIA_DIR` is the location of your Twitter archive's media folder (`/tweets_media`). Needs a trailing slash.
 * `TWITTER_USERNAME` is your Twitter username (no @). This is used to track your threads.
-* 
+
 #### Dependencies
 Have Python3 and Pip installed.
 
