@@ -1,8 +1,10 @@
+*This script is heavily derived from **[lucahammer's fediporter](https://github.com/lucahammer/fediporter)** Python Notebook. 98% of the script was written by lucahammer; I've simplified and adjusted some things to run more reliably for myself, and figured I'd share it here (along with my rate-limiting mods) if it's helpful for anyone. Thank you Luca for the script!*
+
+----
+
 # twitter-archive-to-mastodon
 
 This is a server-side Python3 script you can use to import your [Twitter archive](https://help.twitter.com/en/managing-your-account/how-to-download-your-twitter-archive) into a Mastodon instance you are running and have server access to. With mods to your Mastodon instance, you can remove rate limiting, have your toots backdated, and not push these toots out to your followers (because that would probably annoy them).
-
-This script is heavily derived from **[lucahammer's fediporter](https://github.com/lucahammer/fediporter)** Python Notebook. 98% of the script was written by lucahammer; I've simplified and adjusted some things to run more reliably for myself, and figured I'd share it here (along with my rate-limiting mods) if it's helpful for anyone. Thank you Luca for the script!
 
 When migrating archived Tweets to Mastodon, this script will do the following:
 * Upload media
