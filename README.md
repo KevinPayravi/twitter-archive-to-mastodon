@@ -10,7 +10,6 @@ When migrating archived Tweets to Mastodon, this script will do the following:
 * Upload media
 * Replace @username with @username@twitter.com
 * Threads are recreated as threads (Luca noted that this is fragile, though it seemed to work reliably for me)
-* Embedded t.co URLs are replaced with the expanded versions
 * Retweets are skipped (I figure you wouldn't want these on your profile anyway)
 * Replies and tweets that start with "@" are skipped
 
@@ -20,6 +19,7 @@ Limitations:
 * Alt text is not included since the archive doesn't include them
   * Luca was working on fetching alt text from Twitter in his notebook
 * Edit history isn't imported
+* t.co URLs aren't being replaced properly
 
 Using this script, I was successfully able to import 2,300+ tweets from all the way back in 2010.
 
