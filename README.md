@@ -94,7 +94,8 @@ Wrap the `DistributionWorker` and `ActivityPub` lines in an if-statement checkin
 
 ```rb
   def postprocess_status!
-    Trends.tags.register(@status)il  LinkCrawlWorker.perform_async(@status.id)
+    Trends.tags.register(@status)
+    LinkCrawlWorker.perform_async(@status.id)
     if not @options[:created_at]
       DistributionWorker.perform_async(@status.id)
       ActivityPub::DistributionWorker.perform_async(@status.id)
