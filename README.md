@@ -136,10 +136,22 @@ Increases the `statuses` rate limit to something absurd. Example (changed `300` 
 
 ### In `config/initializers/rack_attack.rb`:
 
-There are some API-related throttles towards the bottom. You'll change three of them Example:
+Change three API-related throttles towards the bottom:
 ```rb
-  throttle('throttle_authenticated_api', limit: 1_500, period: 5.minutes) do |req|
+  throttle('throttle_authenticated_api', limit: 300000, period: 5.minutes) do |req|
     req.authenticated_user_id if req.api_request?
+  end
+```
+
+```rb
+  throttle('throttle_api_media', limit: 300000, period: 30.minutes) do |req|
+    req.authenticated_user_id if req.post? && req.path.match?(/\A\/api\/v\d+\/media\z/i)
+  end
+```
+
+```rb
+  throttle('throttle_media_proxy', limit: 300000, period: 10.minutes) do |req|
+    req.throttleable_remote_ip if req.path.start_with?('/media_proxy')
   end
 ```
 
@@ -148,6 +160,11 @@ I changed `throttle_authenticated_api`, `throttle_per_token_api`, `throttle_api_
 ----
 
 ⚠️ You can and should revert these changes after you're done importing! Leaving disabled and/or ridiculously high rate limits makes your instance suspectible to attack. ⚠️
+
+The original "limit" values were:
+* throttle_authenticated_api: 300
+* throttle_api_media: 30
+* throttle_media_proxy: 30
 
 After modding, you need to restart the daemon and Mastodon with the following commands:
 ```
