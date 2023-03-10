@@ -134,9 +134,9 @@ Increases the `statuses` rate limit to something absurd. Example (changed `300` 
     }.freeze,
 ```
 
-In `config/initializers/rack_attack.rb`...
+### In `config/initializers/rack_attack.rb`:
 
-There are some API-related throttles towards the bottom. Example:
+There are some API-related throttles towards the bottom. You'll change three of them Example:
 ```rb
   throttle('throttle_authenticated_api', limit: 1_500, period: 5.minutes) do |req|
     req.authenticated_user_id if req.api_request?
