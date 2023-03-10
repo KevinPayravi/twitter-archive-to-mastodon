@@ -155,8 +155,6 @@ Change three API-related throttles towards the bottom:
   end
 ```
 
-I changed `throttle_authenticated_api`, `throttle_per_token_api`, `throttle_api_media`, `throttle_media_proxy` to absurd numbers (`300000` or whatever).
-
 ----
 
 ⚠️ You can and should revert these changes after you're done importing! Leaving disabled and/or ridiculously high rate limits makes your instance suspectible to attack. ⚠️
