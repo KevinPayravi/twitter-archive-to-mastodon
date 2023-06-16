@@ -10,7 +10,7 @@ When migrating archived Tweets to Mastodon, this script will do the following:
 * Upload media
 * t.co short URLs are replaced with their targets
 * Replace @username with @username@twitter.com
-* Threads are recreated as threads (Luca noted that this is fragile, though it seemed to work reliably for me)
+* Threads are recreated as threads, though this is fragile; threads may sometimes have missing posts
 * Retweets are skipped (I figure you wouldn't want these on your profile anyway)
 * Replies and tweets that start with "@" are skipped
 
