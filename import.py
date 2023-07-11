@@ -120,7 +120,8 @@ for tweet in tqdm(tweets):
                         tweet["in_reply_to_status_id"]
                     )
                 except:
-                    print("======= FAILED!! ======= Error: " + err)
+                    print("======= FAILED!! ======= Error: ")
+                    print(err)
                     pass
             sleep(1)
             posted = post_status(toot)
@@ -128,7 +129,8 @@ for tweet in tqdm(tweets):
             print(posted)
             ids_dict[tweet["id"]] = posted["id"]
         except Exception as err:
-            print("======= FAILED!! ======= Error: " + err)
+            print("======= FAILED!! ======= Error: ")
+            print(err)
             pass
 
 with open("ids_dict.txt", "w") as f:
